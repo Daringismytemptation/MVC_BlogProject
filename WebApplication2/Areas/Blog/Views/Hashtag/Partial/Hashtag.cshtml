@@ -1,0 +1,10 @@
+﻿@using WebApplication2.Models.Partial;
+@model List<HashtagVM>
+
+
+
+@foreach (var item in Model)
+{
+    <a href="#" class="hashtagBtn" data-id="@item.Id" onclick="onHashtagClick(this)">@item.Name</a>
+    <br/>
+}

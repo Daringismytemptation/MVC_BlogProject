@@ -1,0 +1,22 @@
+﻿@model List<ArticleVM>
+@foreach (var item in Model)
+{
+    <div class="row m-5">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4><a asp-action="Details" asp-area="Blog" asp-controller="Article" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Headline)</a></h4>
+                </div>
+                <div class="card-body">
+                    <span style="font-size: 0.7rem;">Author : <b>@Html.DisplayFor(modelItem => item.Author.FirstName) @Html.DisplayFor(modelItem => item.Author.LastName)</b></span>
+                    <br/>
+                    <span style="font-size: 0.7rem;">Creation Date : <b>@Html.DisplayFor(modelItem => item.CreationDate)</b>, Update Date : <b>@Html.DisplayFor(modelItem => item.UpdateDate)</b>, Readeable Time : <b>@Html.DisplayFor(modelItem => item.ReadableTime) minutes</b></span>
+                    <hr/>
+                    <p>@Html.DisplayFor(modelItem => item.Content)</p>
+                    <hr/>
+                    <small>Hashtags: @Html.DisplayFor(modelItem => item.HashtagString)</small>
+                </div>
+            </div>
+        </div>
+    </div>
+}

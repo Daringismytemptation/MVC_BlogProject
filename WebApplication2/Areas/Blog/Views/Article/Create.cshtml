@@ -1,0 +1,46 @@
+﻿@model ArticleVM
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/js/article/create.js"></script>
+}
+
+
+
+<h3>Create Article</h3>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form  asp-action="Create" asp-controller="Article" asp-area="Blog">
+            <div class="form-group">
+                <label asp-for="Headline" class="control-label"></label>
+                <input asp-for="Headline" class="form-control" />
+                <span asp-validation-for="Headline" class="text-warning"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"></label>
+                <textarea asp-for="Content" class="form-control" rows="12"></textarea>
+                <span asp-validation-for="Content" class="text-warning"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReadableTime" class="control-label"></label>
+                <input asp-for="ReadableTime" class="form-control" />
+                <span asp-validation-for="ReadableTime" class="text-warning"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HashtagString" class="control-label"></label>
+                <input asp-for="HashtagString" class="form-control" />
+                <span asp-validation-for="HashtagString"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+

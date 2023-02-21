@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebApplication2.Migrations
 {
-    public partial class _1 : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -202,7 +202,6 @@ namespace WebApplication2.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NumberOfClicks = table.Column<int>(type: "int", nullable: false),
-                    OrginalClicks = table.Column<int>(type: "int", nullable: false),
                     HashtagID = table.Column<int>(type: "int", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -249,7 +248,6 @@ namespace WebApplication2.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NumberOfClicks = table.Column<int>(type: "int", nullable: false),
-                    OrginalClicks = table.Column<int>(type: "int", nullable: false),
                     LoveYou = table.Column<int>(type: "int", nullable: false),
                     ArticleID = table.Column<int>(type: "int", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -271,8 +269,8 @@ namespace WebApplication2.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "a64418bc-45bb-42c5-9bf7-397afb8b8653", "1b87c3b0-ad14-4c45-b721-e129ce7566b8", "admin", "ADMIN" },
-                    { "df5f7712-da84-4a8a-8d4f-5de54bc669af", "52393ed9-ea47-4255-8f07-a7449fd3e331", "standart", "STANDART" }
+                    { "06a1f7af-1316-4125-b3b6-cdbec11aba99", "00425d33-30f5-49ae-bd53-dfcbf5850c60", "admin", "ADMIN" },
+                    { "74c44422-7048-42d6-83dc-9c4ddc770d58", "1c9a473e-3b38-47dd-8b95-0f688586eb9e", "standart", "STANDART" }
                 });
 
             migrationBuilder.InsertData(
@@ -280,24 +278,24 @@ namespace WebApplication2.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "402edbfc-aad5-4175-892c-5ae42c6eec65", 0, "2e85e402-f8b5-47ab-9006-c0574695724d", "admin@admin.com", true, "Admin", "Admin", false, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAEAACcQAAAAEMeGctYKVBygYnV6/Q0MY8nQh81SKkWBUYYHSINy5WifrxJGFABfw0WxFfOTfCSEag==", null, false, "bb55809a-29c8-4d6f-b3b9-5ed6c3dac6cf", false, "admin@admin.com" },
-                    { "4322b9bf-b1c0-41db-9023-05006b4b371b", 0, "6ac97e98-32c5-4885-bea6-25371181078e", "standart@standart.com", true, "Standart", "Standart", false, null, "STANDART@STANDART.COM", "STANDART@STANDART.COM", "AQAAAAEAACcQAAAAEGIQU3zMcOETp19Cqcqai50j4hSvD2mlINu3lHoSmVk7W+h6vdghXj4gan+SOV836g==", null, false, "fb8c422d-663b-4a67-a959-ca640304b789", false, "standart@standart.com" }
+                    { "98e31fc6-9b35-4eb7-9a9f-0455874af31f", 0, "4b1bf90d-972f-4b7f-81c9-39be6a286dc7", "standart@standart.com", true, "Standart", "Standart", false, null, "STANDART@STANDART.COM", "STANDART@STANDART.COM", "AQAAAAEAACcQAAAAEFGkIschjmZNgbz2F5tVyt8uF5VcSGV6Ns6XWdtTiAcLgkVd3AIQWblOn0LNfV6oCQ==", null, false, "167858c0-ea44-41a4-9a0c-3cd44421a005", false, "standart@standart.com" },
+                    { "e4baaaa3-b481-4de1-bcfe-019e77d8a9f9", 0, "c9bcdbad-fd20-4cc0-a928-d881aa7648b2", "admin@admin.com", true, "Admin", "Admin", false, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAEAACcQAAAAEChXHJC4zvtGkao+CmJDZOgiyV7u94Ji7InnP1yn4mXpIOS4GPe+CpkjT64+5QPn3w==", null, false, "000a7fd9-6c91-4d1f-9a2a-6f9c422a65ac", false, "admin@admin.com" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserClaims",
                 columns: new[] { "Id", "ClaimType", "ClaimValue", "UserId" },
-                values: new object[] { 1, "IsAdmin", "true", "402edbfc-aad5-4175-892c-5ae42c6eec65" });
+                values: new object[] { 1, "IsAdmin", "true", "e4baaaa3-b481-4de1-bcfe-019e77d8a9f9" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "a64418bc-45bb-42c5-9bf7-397afb8b8653", "402edbfc-aad5-4175-892c-5ae42c6eec65" });
+                values: new object[] { "74c44422-7048-42d6-83dc-9c4ddc770d58", "98e31fc6-9b35-4eb7-9a9f-0455874af31f" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "df5f7712-da84-4a8a-8d4f-5de54bc669af", "4322b9bf-b1c0-41db-9023-05006b4b371b" });
+                values: new object[] { "06a1f7af-1316-4125-b3b6-cdbec11aba99", "e4baaaa3-b481-4de1-bcfe-019e77d8a9f9" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_ArticleHashtag_HashtagsID",
